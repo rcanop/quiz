@@ -1,10 +1,61 @@
 body {
-	background: #333;
+  background: #333;
 }
 
-#page-wrap:after { content: "Smartphone Layout"; }
+#page-wrap:after {
+  content: "Smartphone Layout";
+}
+nav {
+  width:100%;
 
-h2 span, section h3 { display: none; }
-body { font-size: xx-large;  } /* no se hace antes para que no afecte */
+}
+section {
+  margin-left:0;
+}
+h2 span, section h3 {
+  display: none;
+}
 
-footer, input { font-size: large;}
+body {
+  font-size: xx-large;
+}
+/* no se hace antes para que no afecte */
+
+footer, input {
+  font-size: large;
+}
+h1 {
+  font-size:larger;
+}
+h2 {
+  font-size:large;
+ 
+}
+.menu {
+   height:auto;
+   float:none;
+}
+.menu > li {
+  clear: both;
+ 
+}
+#foto{
+  max-width: none;
+  min-width: 90;
+  width:100%;
+  align-content:center;
+ 
+}
+
+.ochenta {
+  width:100%;
+  
+}
+
+.vid {
+  clear:both;
+  display:none;
+}
+.flex-fila {
+  flex-wrap:wrap;
+}

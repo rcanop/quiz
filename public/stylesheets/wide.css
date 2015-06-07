@@ -7,8 +7,7 @@ body {
 
 nav {
 	float:left; 
-	width: 15%;
-	height: 200px;
+	/*width: 15%;*/
 }
 
 nav span {
@@ -16,11 +15,21 @@ nav span {
 }
 
 section {
-	float:right;
-	width: 80%;
-	height: 200px;
+	/*float:right;*/
+  margin-left:0;
 }
 footer {
 	clear: both;
 	display: block;
 }
+.menu {
+  height:2em;
+  text-align:left;
+  
+}
+
+ul.menu > li  {
+  text-align:center;
+  float:left
+}
+
