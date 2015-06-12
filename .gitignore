@@ -76,3 +76,6 @@ $RECYCLE.BIN/
 
 # Visual Code
 .settings
+
+# Ficheros de base de datos SQLite
+quiz.sqlite
