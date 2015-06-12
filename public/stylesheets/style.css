@@ -18,6 +18,7 @@ body {
   margin: 2% auto;
   background-color: white;
   height: 100%;
+  width:100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -32,6 +33,7 @@ body {
 
 section > div {
   margin: 20px;
+  width:100%;
 }
 
 header, nav, section, footer {
@@ -45,7 +47,7 @@ nav {
 }
 
   nav span {
-    margin: 0px 10px 0px 0px;
+    margin: 0 10px 0 0;
   }
 
 
@@ -74,6 +76,7 @@ ul.menu {
 .flota {
   /*display:inline-block; */
   padding-top: 0.5em;
+  width:100%;
 }
 
 #foto {
@@ -101,11 +104,11 @@ h2 {
 
 .flex-fila {
   display: flex;
+  width:100%;
   /*flex-wrap:wrap;*/
 }
 
 .vid {
   width: 270px;
   justify-content:center;
-  /*clear: left;*/
 }
