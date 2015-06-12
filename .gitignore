@@ -79,3 +79,5 @@ $RECYCLE.BIN/
 
 # Ficheros de base de datos SQLite
 quiz.sqlite
+# Ficheros de configuración entorno desarrollo local
+.env
