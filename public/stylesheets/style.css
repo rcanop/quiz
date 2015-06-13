@@ -116,3 +116,14 @@ table {
   width:100%;
   text-align:center;
 }
+.error {
+  color:indianred;
+  width:95%;
+}
+.error > p  {
+  display: block;
+  font-family:monospace;
+  white-space:pre-line;
+  text-align:left;
+  
+}
