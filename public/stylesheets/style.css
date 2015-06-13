@@ -112,3 +112,7 @@ h2 {
   width: 270px;
   justify-content:center;
 }
+table {
+  width:100%;
+  text-align:center;
+}

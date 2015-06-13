@@ -9,8 +9,9 @@ router.get('/', function(req, res) {
 });
 
 // añadimos las rutas GET de pregunta y respuesta. RUTAS SIEMPRE ABSOLUTAS
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
+router.get('/quizes', quizController.index); // Muestra todas las preguntas
+router.get('/quizes/:quizId(\\d+)', quizController.show); // Muestra una pregunta r
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 // añadimos ruta acerca de
 router.get('/author', function (req, res) {

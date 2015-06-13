@@ -1,2 +1,2 @@
-<p><%= respuesta %></p>
-<a href="./question"> Inténtelo otra vez </a>
+<p><%= (respuesta ? 'Correcto': 'Incorrecto'); %></p>
+<a href="<%= (respuesta ? '/quizes':'/quizes/' + quiz.id) %>"> Volver </a>
