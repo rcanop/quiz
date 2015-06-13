@@ -112,6 +112,9 @@ h2 {
   width: 270px;
   justify-content:center;
 }
+#quizes {
+  text-align:left;
+}
 table {
   width:100%;
   text-align:center;

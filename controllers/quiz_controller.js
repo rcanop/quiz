@@ -13,11 +13,30 @@ exports.load = function(req, res, next, quizId) {
     }).catch(function(error) { next(error); });
 }; 
 // GET /quizes
-exports.index = function(req, res) {
-  models.Quiz.findAll().then(function (quizes) {
-    res.render('quizes/index.ejs', { quizes: quizes });
+exports.index = function (req, res, next) {
+  var search = null
+  , query = {};
+  console.log("--------------" + req.query.search);
+  // Obtener los datos de la consulta.  
+  if (req.query.search  !== undefined) {
+    search = req.query.search;
+    
+    if (search.trim().length > 0) {
+      search = '%' + search.replace(/\s/g, '%') + '%';
+      query = { where: ["pregunta LIKE ?", search], limit: null };
+    
+    } else {
+      next(new Error("Introduzca un texto para buscar preguntas."));
+    
+    }
+  }
+  
+  // Buscar las preguntas.
+  models.Quiz.findAll(query).then(function (quizes) {
+    res.render('quizes/index.ejs', { quizes: quizes, search: search });
   }).catch(function (error) { next(error); });
 };
+
 // GET /quizes/show
 exports.show = function (req, res) {
   models.Quiz.findById(req.params.quizId).then(function (quiz) {

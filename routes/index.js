@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
 router.param('quizId', quizController.load); // si existe el parámetro :quizId dentro de la ruta ejecuta quizController.load
 
 // añadimos las rutas GET de pregunta y respuesta. RUTAS SIEMPRE ABSOLUTAS
+router.get('/quizes/:search', quizController.index); // Muestra las preguntas filtradas
 router.get('/quizes', quizController.index); // Muestra todas las preguntas
 router.get('/quizes/:quizId(\\d+)', quizController.show); // Muestra una pregunta r
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
