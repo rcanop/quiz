@@ -7,6 +7,8 @@ var quizController = require('../controllers/quiz_controller');
 router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
+// Autoload de comandos con :quizId
+router.param('quizId', quizController.load); // si existe el parámetro :quizId dentro de la ruta ejecuta quizController.load
 
 // añadimos las rutas GET de pregunta y respuesta. RUTAS SIEMPRE ABSOLUTAS
 router.get('/quizes', quizController.index); // Muestra todas las preguntas
