@@ -5,13 +5,7 @@ body {
 #page-wrap:after {
   content: "Smartphone Layout";
 }
-nav {
-  width:100%;
 
-}
-section {
-  margin-left:0;
-}
 h2 span, section h3 {
   display: none;
 }
@@ -19,18 +13,15 @@ h2 span, section h3 {
 body {
   font-size: xx-large;
 }
-/* no se hace antes para que no afecte */
 
-footer, input {
+input, button {
+  font-size:x-large;
+
+}
+footer {
   font-size: large;
 }
-h1 {
-  font-size:larger;
-}
-h2 {
-  font-size:large;
- 
-}
+
 .menu {
    height:auto;
    float:none;
@@ -39,23 +30,15 @@ h2 {
   clear: both;
  
 }
-#foto{
-  max-width: none;
+.flex {
+  flex-wrap:wrap;
+}
+#foto, div#autor, .vid {
   width:100%;
-  align-content:center;
+  margin: 2px auto;
  
 }
 
-.ochenta {
-  width:100%;
-  
-}
-
-.vid {
-  clear:both;
-  width:100%;
-  align-content:center;
-}
-.flex-fila {
-  flex-wrap:wrap;
+.rem {
+  display:none;
 }

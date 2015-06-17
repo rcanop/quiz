@@ -3,13 +3,7 @@
   padding: 0;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  padding: 50px;
   font: 16px "Georgia", serif;
 }
 
@@ -17,14 +11,11 @@ body {
 #page-wrap {
   margin: 2% auto;
   background-color: white;
-  height: 100%;
-  width:100%;
-  display: flex;
-  flex-wrap: wrap;
+
 }
 
   #page-wrap > .main {
-    border: 1px solid #000;
+    border: 1px solid #999;
     padding: 1%;
     margin-bottom: 1%;
     color: black;
@@ -33,21 +24,21 @@ body {
 
 section > div {
   margin: 20px;
-  width:100%;
 }
 
 header, nav, section, footer {
   background: #eee;
   text-align: center;
-  width: 100%;
-}
 
-nav {
-  width: 130px;
 }
 
   nav span {
     margin: 0 10px 0 0;
+
+  }
+
+  .right {
+    float:right;
   }
 
 
@@ -73,8 +64,45 @@ ul.menu {
     color: #ff6a00;
   }
 
+  #foto {
+    min-width:90px;
+    width: 15%;
+    justify-content:flex-start;
+  }
+
+    #foto > img {
+      margin: 0 auto;
+      height: 100px;
+      width: auto;
+    }
+
+.vid {
+  min-width: 90px;
+  width: 40%;
+  margin: 0 auto;
+  justify-content: center;
+  height: 100%;
+}
+
+.vid > iframe {
+  width:80%;
+  justify-content:space-around;
+}
+
+.flex {
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+div#autor {
+  width:30%;
+  background-color:lightpink;
+  text-align: center;
+  margin:0, auto;
+}
+/*
 .flota {
-  /*display:inline-block; */
   padding-top: 0.5em;
   width:100%;
 }
@@ -97,21 +125,14 @@ h2 {
   font-size: larger;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .flex-fila {
   display: flex;
   width:100%;
-  /*flex-wrap:wrap;*/
 }
 
-.vid {
-  width: 270px;
-  justify-content:center;
-}
+
 #quizes {
   text-align:left;
 }
@@ -130,3 +151,4 @@ table {
   text-align:left;
   
 }
+*/

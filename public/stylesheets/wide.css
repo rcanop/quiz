@@ -7,23 +7,26 @@ body {
 
 nav {
 	float:left; 
-	/*width: 15%;*/
+	width: 15%;
+  height: 200px;
 }
 
 nav span {
-	margin: 0px 100px 0px 0px;
+	margin: 0 100px 0 0;
 }
 
 section {
-	/*float:right;*/
-  margin-left:0;
+	float:right;
+  width:80%;
+  height:200px;
 }
 footer {
 	clear: both;
 	display: block;
 }
+
+/*
 .menu {
-  height:2em;
   text-align:left;
   
 }
@@ -33,3 +36,4 @@ ul.menu > li  {
   float:left
 }
 
+*/
