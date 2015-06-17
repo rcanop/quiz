@@ -99,55 +99,8 @@ div#autor {
   flex-wrap: nowrap;
 }
 
-
-/*
-.flota {
-  padding-top: 0.5em;
-  width:100%;
-}
-
-#foto {
-  min-width: 100px;
-  width: 20%;
-}
-
-.ochenta {
-  display: inline-block;
-  clear: left;
-}
-
-h1 {
-  font-size: xx-large;
-}
-
-h2 {
-  font-size: larger;
-}
-
-
-
-.flex-fila {
-  display: flex;
-  width:100%;
-}
-
-
-#quizes {
+#errorMsgs {
+  color: #ff6a00;
+  font-size:smaller;
   text-align:left;
 }
-table {
-  width:100%;
-  text-align:center;
-}
-.error {
-  color:indianred;
-  width:95%;
-}
-.error > p  {
-  display: block;
-  font-family:monospace;
-  white-space:pre-line;
-  text-align:left;
-  
-}
-*/

@@ -5,7 +5,7 @@ var quizController = require('../controllers/quiz_controller');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz' });
+  res.render('index', { title: 'Quiz', errors: [] });
 });
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load); // si existe el parámetro :quizId dentro de la ruta ejecuta quizController.load
@@ -20,7 +20,7 @@ router.post('/quizes/create', quizController.create);
 
 // añadimos ruta acerca de
 router.get('/author', function (req, res) {
-  res.render('author');
+  res.render('author', { errors: [] });
 });
 
 module.exports = router;
