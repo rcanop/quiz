@@ -22,12 +22,12 @@ footer {
   font-size: large;
 }
 
-.menu {
+.enlacespie {
    height:auto;
    float:none;
 }
-.menu > li {
-  clear: both;
+.enlacespie > li {
+  display: block;
  
 }
 .flex {

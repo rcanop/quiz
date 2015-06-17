@@ -14,6 +14,9 @@ router.param('quizId', quizController.load); // si existe el parámetro :quizId 
 router.get('/quizes', quizController.index); // Muestra todas las preguntas
 router.get('/quizes/:quizId(\\d+)', quizController.show); // Muestra una pregunta r
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+router.get('/quizes/new', quizController.new);
+router.post('/quizes/create', quizController.create);
+
 
 // añadimos ruta acerca de
 router.get('/author', function (req, res) {

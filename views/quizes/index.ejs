@@ -10,5 +10,8 @@
     <% var i; for(i=0; i < quizes.length || 0; i++) { %>
     <tr><td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
     <% } %>
+    <tfoot>
+      <tr><td><button type="button" onclick="window.open('/quizes/new', '_self')">Nueva pregunta</button></td></tr>
+    </tfoot>
   </table>
 </div>

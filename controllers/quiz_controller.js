@@ -30,7 +30,6 @@ exports.index = function (req, res, next) {
     
     }
   }
-  
   // Buscar las preguntas.
   models.Quiz.findAll(query).then(function (quizes) {
     res.render('quizes/index.ejs', { quizes: quizes, search: search });
@@ -54,3 +53,27 @@ exports.answer = function (req, res) {
     res.render('quizes/answer', obj);
   }).catch(function (error) { next(error); });
 };
+
+
+// GET quizes/new
+exports.new = function (req, res) {
+  var quiz = models.Quiz.build(
+    { pregunta: '', respuesta: '' }
+  );
+  res.render('quizes/new', { quiz: quiz });
+
+};
+
+//POST quizes/create
+exports.create = function (req, res) {
+  var quiz = models.Quiz.build(req.body.quiz);
+  
+  // Guardar los cambios y redireccionar a /quizes 
+  quiz.save({ fields: ["pregunta", "respuesta"] }).then(function () {
+    res.redirect('/quizes');
+  }).catch(function (error) {
+    next(error);
+  });
+};
+
+  
