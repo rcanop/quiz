@@ -115,6 +115,9 @@ div#autor {
   font-size:smaller;
   text-align:left;
 }
-.botEdit {
+button {
+  border-radius: 5px;
+}
+.botEdit, .botElim {
   
 }

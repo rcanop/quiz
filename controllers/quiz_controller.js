@@ -116,3 +116,12 @@ exports.update = function (req, res) {
       }
     });
 };
+
+exports.delete = function (req, res) {
+  req.quiz.destroy()
+  .then(function () {
+    res.redirect('/quizes');
+  }).catch(function (error) {
+    next(error);
+  });
+};

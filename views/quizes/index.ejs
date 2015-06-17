@@ -11,6 +11,14 @@
     <tr>
       <td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
       <td><button type="button" class="botEdit" onclick="window.open('/quizes/<%=quizes[i].id %>/edit', '_self');">Editar</button></td>
+      <td>
+        <!-- Forma de eliminar un registro -->
+        <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+          <button type="submit" class="botElim" onclick="return confirm('¿Desea eliminar la pregunta: <%=quizes[i].pregunta %>?');">
+            Eliminar
+          </button>
+        </form>
+      </td>
     </tr>
     <% } %>
     <tfoot>
