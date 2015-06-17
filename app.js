@@ -8,6 +8,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials'); // módulo de vistas parciales.
+// Middleware para poder usar el atributo _method y poder usar los métodos de API Rest PUT y DELETE
+var methodOverride = require('method-override'); 
 
 var routes = require('./routes/index');
 
@@ -26,6 +28,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // para que los formularios puedan tomar quiz[pregunta] correctamente.
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

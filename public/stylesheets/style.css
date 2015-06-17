@@ -98,9 +98,23 @@ div#autor {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-
+.error {
+  color:indianred;
+  background-color:dimgray;
+  width:95%;
+}
+.error > p  {
+  display: block;
+  font-family:monospace;
+  white-space:pre-line;
+  text-align:left;
+  
+}
 #errorMsgs {
   color: #ff6a00;
   font-size:smaller;
   text-align:left;
+}
+.botEdit {
+  
 }

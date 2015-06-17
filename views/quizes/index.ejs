@@ -8,7 +8,10 @@
   </form>
   <table>
     <% var i; for(i=0; i < quizes.length || 0; i++) { %>
-    <tr><td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+    <tr>
+      <td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <td><button type="button" class="botEdit" onclick="window.open('/quizes/<%=quizes[i].id %>/edit', '_self');">Editar</button></td>
+    </tr>
     <% } %>
     <tfoot>
       <tr><td><button type="button" onclick="window.open('/quizes/new', '_self')">Nueva pregunta</button></td></tr>
