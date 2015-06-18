@@ -46,12 +46,14 @@ db.sync().then(function () {
     if (count === 0) { // Si no hay registros de agrega uno
       Quiz.create({
         pregunta: 'Capital de Italia',
-        respuesta: 'Roma'
+        respuesta: 'Roma',
+        tema: 'humanidades'
       });
 
       Quiz.create({
         pregunta: 'Capital de Portugal',
-        respuesta: 'Lisboa'
+        respuesta: 'Lisboa',
+        tema: 'humanidades'
       }).then(function () { // cuando se cree el registro sale mensaje en consola.
         console.log('Base de datos inicializada');
       });
