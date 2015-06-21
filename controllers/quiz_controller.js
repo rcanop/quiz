@@ -69,7 +69,7 @@ exports.new = function (req, res) {
 
 };
 
-//POST quizes/create
+//POST quizes
 exports.create = function (req, res) {
   var quiz = models.Quiz.build(req.body.quiz);
   

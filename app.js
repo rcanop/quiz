@@ -9,7 +9,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials'); // módulo de vistas parciales.
 // Middleware para poder usar el atributo _method y poder usar los métodos de API Rest PUT y DELETE
-var methodOverride = require('method-override'); 
+var methodOverride = require('method-override');
+
+// Middleware para usar sesiones de usuarios
+var session = require('express-session');
 
 var routes = require('./routes/index');
 
@@ -27,9 +30,23 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // para que los formularios puedan tomar quiz[pregunta] correctamente.
-app.use(cookieParser());
+app.use(cookieParser('Quiz')); //añadimos una semilla para el tema de las sesiones, que en las cookies use una semilla diferente para  codificarlas.  
+app.use(session());
+
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Guardamos la ruta de petición previa, para poder volver a la misma página si es necesario
+app.use(function (req, res, next) {
+  // si la ruta no tiene un path de login o logout guardamos la ruta, para volver a la misma página depués de un login/out
+  if (!req.path.match(/\/login|\/logout/)) {
+    req.session.redir = req.path;
+  }
+
+  // hacer visible req.session en las vistas
+  res.locals.session = req.session;
+  next();
+});
 
 app.use('/', routes);
 

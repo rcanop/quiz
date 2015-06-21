@@ -14,7 +14,7 @@ body {
   font-size: xx-large;
 }
 
-input, button {
+input, button, select {
   font-size:x-large;
 
 }
@@ -39,7 +39,7 @@ footer {
  
 }
 
-.rem, td.label {
+.rem, td.label, .field >label, .field > br {
   display:none;
 }
 textarea {
