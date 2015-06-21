@@ -10,6 +10,7 @@
     <% var i; for(i=0; i < quizes.length || 0; i++) { %>
     <tr>
       <td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <% if (session.user) { %>
       <td><button type="button" class="botEdit" onclick="window.open('/quizes/<%=quizes[i].id %>/edit', '_self');">Editar</button></td>
       <td>
         <!-- Forma de eliminar un registro -->
@@ -19,10 +20,13 @@
           </button>
         </form>
       </td>
+      <% } %>
     </tr>
     <% } %>
+    <% if (session.user) { %>
     <tfoot>
       <tr><td><button type="button" onclick="window.open('/quizes/new', '_self')">Nueva pregunta</button></td></tr>
     </tfoot>
+    <% } %>
   </table>
 </div>
