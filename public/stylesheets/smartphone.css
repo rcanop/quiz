@@ -35,10 +35,10 @@ footer {
 }
 #foto, div#autor, .vid {
   width:100%;
-  margin: 2px auto;
+  padding: 2px auto;
  
 }
 
-.rem {
+.rem, td.label {
   display:none;
 }

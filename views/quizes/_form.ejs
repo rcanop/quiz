@@ -1,14 +1,29 @@
-﻿<label for="tema" class="rem">Tema:</label>
-<select id="tema" name="quiz[tema]">
-  <option value="">Seleccione un tema</option>
-  <option value="ciencia" <%= (quiz.tema === 'ciencia' ? 'selected': ''); %> >Ciencia</option>
-  <option value="humanidades" <%= (quiz.tema === 'humanidades' ? 'selected': ''); %> >Humanidades</option>
-  <option value="tecnologia" <%= (quiz.tema === 'tecnologia' ? 'selected': ''); %> >Tecnología</option>
-  <option value="otro" <%= (quiz.tema === 'otro' ? 'selected': ''); %> >Otro</option>
-</select><br />
-<label for="preg" class="rem">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" maxlength="255" placeholder="Introduzca la pregunta" value="<%= quiz.pregunta %>" /><br />
-<label for="resp" class="rem">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" maxlength="255" placeholder="Introduzca la respuesta" value="<%= quiz.respuesta %>" /><br />
-<button type="button" onclick="window.open('/quizes', '_self');">Cancelar</button>
-<button type="submit">Guardar</button><br />
+﻿<table class="formulario">
+  <tr>
+    <td class="label"><label for="tema" class="rem">Tema:</label></td>
+    <td>
+      <select id="tema" name="quiz[tema]">
+        <option value="">Seleccione un tema</option>
+        <option value="ciencia" <%= (quiz.tema === 'ciencia' ? 'selected': ''); %> >Ciencia</option>
+        <option value="humanidades" <%= (quiz.tema === 'humanidades' ? 'selected': ''); %> >Humanidades</option>
+        <option value="tecnologia" <%= (quiz.tema === 'tecnologia' ? 'selected': ''); %> >Tecnología</option>
+        <option value="otro" <%= (quiz.tema === 'otro' ? 'selected': ''); %> >Otro</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="label"><label for="preg" class="rem">Pregunta:</label></td>
+    <td><input type="text" id="preg" name="quiz[pregunta]" maxlength="255" placeholder="Introduzca la pregunta" value="<%= quiz.pregunta %>" /></td>
+  </tr>
+  <tr>
+    <td class="label"><label for="resp" class="rem">Respuesta:</label></td>
+    <td><input type="text" id="resp" name="quiz[respuesta]" maxlength="255" placeholder="Introduzca la respuesta" value="<%= quiz.respuesta %>" /></td>
+  </tr>
+  <tr>
+    <td class="label"/>
+    <td>
+      <button type="button" onclick="window.open('/quizes', '_self');">Cancelar</button>
+      <button type="submit">Guardar</button>
+    </td>
+  </tr>
+</table>

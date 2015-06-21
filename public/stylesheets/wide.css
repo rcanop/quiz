@@ -1,28 +1,44 @@
 body {
-	background: #999;
+  background: #999;
 }
 #page-wrap:after {
-	content: "Wide Layout";
+  content: "Wide Layout";
 }
-
-nav {
-	float:left; 
-	width: 15%;
-  height: 200px;
+div.contenedor {
+  display:table;
+  width:100%;
 }
-
-nav span {
-	margin: 0 100px 0 0;
+div.contenidos {
+  display:table-row;
+  width:100%;
+  background: #EEE;
 }
-
-section {
-	float:right;
+.menu_izq {
+  width:18%;
+  float:left;
+}
+.menu_der {
   width:80%;
-  height:200px;
+  float:right;
+  border: 1px solid #999;
+}
+nav section {
+  display:table-cell;
+  
+}
+nav {
+  padding-top: 1em;
+  width:100%;
+}
+nav span {
+  padding: 0.5em 0 0 0;
+  display:block;
+  clear:both;
+
 }
 footer {
-	clear: both;
-	display: block;
+  clear: both;
+  display: block;
 }
 
 .enlacespie {
@@ -30,3 +46,9 @@ footer {
   
 }
 
+footer a {
+  padding-right: 0.5em;
+}
+p {
+  padding-bottom:0.5em;
+}

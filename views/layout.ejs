@@ -16,26 +16,27 @@
   <header class="main" id="h1">
     <h2>Quiz<span>: el juego de las preguntas</span></h2>
   </header>
-  <div>
-    <nav class="main" id="n1" role="navigation">
-      <span><a href="/">Inicio</a></span>
-      <span><a href="/quizes">Preguntas</a></span>
-      <span><a href="/author">Acerca de ...</a></span>
-    </nav>
-
-    <section class="main" id="s1">
-      <% if (errors.length) { %>
+  <div class="contenedor">
+    <div class="contenidos">
+      <nav class="main menu_izq" id="n1" role="navigation">
+        <span><a href="/">Inicio</a></span>
+        <span><a href="/quizes">Preguntas</a></span>
+        <span><a href="/author">Acerca de ...</a></span>
+      </nav>
+      <section class="main menu_der" id="s1">
+        <% if (errors.length) { %>
         <span id="errorMsgs">
           Corregir Errores:<br />
           <% for(var i in errors) { %>
             <span><%= errors[i].message %></span><br />
           <% } %>
         </span>
-      <% } %>
-      <div>
-        <%- body %>
+        <% } %>
+        <div>
+          <%- body %>
+        </div>
+      </section>
       </div>
-    </section>
   </div>
   <footer class="main" id="f1">
     <ul class="enlacespie">

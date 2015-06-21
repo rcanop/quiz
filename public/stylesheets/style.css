@@ -9,32 +9,42 @@ body {
 
 
 #page-wrap {
-  margin: 2% auto;
+  padding: 2% auto;
   background-color: white;
+  display:block;
 
 }
+div.contenedor {
+  margin: 1% auto 1% auto;
+}
+div.contenidos {
+    padding: 1%;
+    color: black;
 
-  #page-wrap > .main {
+
+}
+  /*.main {
     border: 1px solid #999;
     padding: 1%;
     margin-bottom: 1%;
     color: black;
-  }
+  }*/
 
 
 section > div {
-  margin: 20px;
+  padding: 1em;
+  
 }
 
 header, nav, section, footer {
   background: #eee;
   text-align: center;
-
+  display:block;
+  
 }
 
   nav span {
     margin: 0 10px 0 0;
-    clear:both;
   }
 
   .right {
@@ -55,7 +65,7 @@ a {
 
 .enlacespie > li {
   display:inline-block;
-  margin-left: 10px;
+  padding-left: 10px;
 }
 
   .enlacespie > li > a {
@@ -69,7 +79,7 @@ a {
   }
 
     #foto > img {
-      margin: 0 auto;
+      padding: 0 auto;
       height: 100px;
       width: auto;
     }
@@ -83,7 +93,7 @@ div#autor {
 .vid {
   min-width: 90px;
   width: 40%;
-  margin: 0 auto;
+  padding: 0 auto;
   justify-content: center;
   height: 100%;
 }
@@ -117,7 +127,17 @@ div#autor {
 }
 button {
   border-radius: 5px;
+  padding:2px;
 }
 .botEdit, .botElim {
+  border-radius:6px 3px;
+}
+
+.formulario {
+  text-align:left;
+  
+}
+p, h1, h2, h3 {
+  padding: 0.5em 0;
   
 }
