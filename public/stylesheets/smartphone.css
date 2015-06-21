@@ -42,3 +42,6 @@ footer {
 .rem, td.label {
   display:none;
 }
+textarea {
+  resize:vertical;
+}

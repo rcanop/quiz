@@ -33,8 +33,15 @@ var db = new Sequelize(DB_name, DB_user, DB_pwd,
 
 // importamos la definición de la tabla Quiz en quiz.js
 var Quiz = db.import(path.join(__dirname, 'quiz'));
+var Comment = db.import(path.join(__dirname, 'comment'));
+
+// establecer la relación entre Quiz y Comment
+Comment.belongsTo(Quiz); // Un comentario pertenece a una pregunta
+Quiz.hasMany(Comment);  // Una pregunta puede tener varios comentarios.
+
 
 exports.Quiz = Quiz; // exportamos la variable Quiz para poder se usado el modelo
+exports.Comment = Comment;
 
 
 // Inicialización de la base de datos
@@ -44,17 +51,19 @@ exports.Quiz = Quiz; // exportamos la variable Quiz para poder se usado el model
 db.sync().then(function () {
   Quiz.count().then(function (count) {
     if (count === 0) { // Si no hay registros de agrega uno
-      Quiz.create({
-        pregunta: 'Capital de Italia',
-        respuesta: 'Roma',
-        tema: 'humanidades'
-      });
+      Quiz.bulkCreate([
+        {
+          pregunta: 'Capital de Italia',
+          respuesta: 'Roma',
+          tema: 'humanidades'
+        },
+        {
+          pregunta: 'Capital de Portugal',
+          respuesta: 'Lisboa',
+          tema: 'humanidades'
 
-      Quiz.create({
-        pregunta: 'Capital de Portugal',
-        respuesta: 'Lisboa',
-        tema: 'humanidades'
-      }).then(function () { // cuando se cree el registro sale mensaje en consola.
+        }]
+        ).then(function () { // cuando se cree el registro sale mensaje en consola.
         console.log('Base de datos inicializada');
       });
     };

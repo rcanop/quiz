@@ -32,8 +32,8 @@ div.contenidos {
 
 
 section > div {
-  padding: 1em;
-  
+  padding: 1%;
+  text-align:left;
 }
 
 header, nav, section, footer {
@@ -44,7 +44,7 @@ header, nav, section, footer {
 }
 
   nav span {
-    margin: 0 10px 0 0;
+    padding: 0 10px 0 0;
   }
 
   .right {
@@ -110,7 +110,7 @@ div#autor {
 }
 .error {
   color:indianred;
-  background-color:dimgray;
+  background-color:wheat;
   width:95%;
 }
 .error > p  {
@@ -140,4 +140,17 @@ button {
 p, h1, h2, h3 {
   padding: 0.5em 0;
   
+}
+.right {
+  float:right;
+
+}
+header {
+  padding-right: 1%;
+}
+textarea {
+  resize:both;
+  width:100%;
+  min-width:50%;
+  padding-bottom:0.5em;
 }

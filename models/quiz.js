@@ -13,7 +13,7 @@
       type: DataTypes.STRING,
       validate: {
         notEmpty: { msg: " - Respuesta es obligatoria." },
-        len: { args: [2, 255], msg: "Respuesta debe tener un mínimo de 2 caractéres y un máximo de 255." }
+        len: { args: [0, 255], msg: "Respuesta debe tener un máximo de 255 caracteres." }
       }
     },
     tema: {
