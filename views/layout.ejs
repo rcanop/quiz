@@ -15,15 +15,12 @@
 <div id="page-wrap">
   <header class="main" id="h1">
     <% if (session.user) { %>
-    <!--<span class="right">-->
-    <div class="right">
-      <!--<a href="/logout?_method=delete">Logout</a>  Asi era // GET LOGOUT -->
-      <form method="post" action="/logout?_method=delete"><input type="submit" value="Logout"></input></form> <!-- DELETE LOGOUT-->
-    </div>
-      <div class="right"><%= session.user.username %></div>
-    <!--</span>-->
+    <form method="post" action="/logout?_method=delete">
+      <button class="right" type="submit">Desconectar</button>
+      <span class="right"><%= session.user.username %></span>
+    </form>
     <% } else { %>
-    <span class="right"><a href="/login">Login</a></span>
+    <span class="right"><a href="/login">Conectar</a></span>
     <% } %>
     <h2>Quiz<span>: el juego de las preguntas</span></h2>
   </header>

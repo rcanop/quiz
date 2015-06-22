@@ -10,6 +10,10 @@
           args: [0, 1000], msg: "No puede tener una longitud superior a 1000 caractéres."
         }
       }
+    },
+    publicado: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   });
 

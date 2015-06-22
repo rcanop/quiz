@@ -146,6 +146,9 @@ p, h1, h2, h3 {
   padding-right:0.5em;
 
 }
+span.right {
+  padding-top:0.25em;
+}
 header {
   padding-right: 1%;
 }
@@ -158,4 +161,10 @@ textarea {
 input {
   resize:horizontal;
   max-width:100%;
+}
+ul.comment {
+  list-style:inside;
+  list-style-type: disc;
+  display:block;
+  width:100%
 }

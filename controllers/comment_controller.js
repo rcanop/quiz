@@ -27,5 +27,29 @@ exports.create = function (req, res) {
         });
       }
     })
-  .catch(function(error) { next(error);});
+  .catch(function(error) { next(error); });
+};
+
+exports.load = function (req, res, next, commentId) {
+  models.Comment.findById(commentId)
+  .then(
+    function (comment) {
+      if (comment) {
+        req.comment = comment;
+        next();
+      } else {
+        next(new Error("No existe el id de comentario: " + commentId));
+      }
+    })
+  .catch(function (error) { next(error); }); 
+};
+
+exports.publish = function (req, res) {
+  req.comment.publicado = true;
+  req.comment
+  .save({ fields: ["publicado"] })
+  .then(function () {
+    res.redirect("/quizes/" + req.comment.QuizId);
+  })
+  .catch(function (error) { next(error) });
 };

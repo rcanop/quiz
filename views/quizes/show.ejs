@@ -9,6 +9,17 @@
 
   <h2>Comentarios</h2>
   <% for(i in quiz.Comments) { %>
-    <p> - <%= quiz.Comments[i].comentario %></p>
+  <form method="post" action="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[i].id %>/publish?_method=put">
+    <ul class="comment">
+        <% if(quiz.Comments[i].publicado || session.user) { %>
+        <li>
+          <%= quiz.Comments[i].comentario %>
+          <%if (session.user && !quiz.Comments[i].publicado) { %>
+          <button type="submit">Publicar</button>
+          <% } %>
+        </li>
+        <% } %>
+    </ul>
+  </form>
   <% } %>
 </div> 

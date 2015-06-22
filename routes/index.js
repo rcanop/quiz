@@ -22,14 +22,18 @@ router.get('/quizes/:quizId(\\d+)/edit'  , sessionController.loginRequired, quiz
 router.put('/quizes/:quizId(\\d+)'       , sessionController.loginRequired, quizController.update);
 router.delete('/quizes/:quizId(\\d+)'    , sessionController.loginRequired, quizController.delete);
 
+// Autoload comentarios
+router.param('commentId', commentController.load);
+
 // añadimos rutas para crear comentarios.
-router.get('/quizes/:quizId(\\d+)/comments/new', sessionController.loginRequired, commentController.new);
+router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments'   , commentController.create);
+router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish'
+  , sessionController.loginRequired, commentController.publish); // actualizar campo Publicar con PUT c0mo debe de ser.
 
 // rutas de sesión
 router.get('/login', sessionController.new); // login
 router.post('/login', sessionController.create); // crear la sesión
-//router.get('/logout', sessionController.destroy); //logout con GET layout.ejs
-router.delete('/logout', sessionController.destroy);//logout con DELETE layout.ejs
+router.delete('/logout', sessionController.destroy);//logout con DELETE
 
 module.exports = router;
