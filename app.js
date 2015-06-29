@@ -14,6 +14,7 @@ var methodOverride = require('method-override');
 // Middleware para usar sesiones de usuarios
 var session = require('express-session');
 
+// enrutador principal
 var routes = require('./routes/index');
 
 var app = express();
@@ -31,7 +32,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // para que los formularios puedan tomar quiz[pregunta] correctamente.
 app.use(cookieParser('Quiz')); //añadimos una semilla para el tema de las sesiones, que en las cookies use una semilla diferente para  codificarlas.  
-app.use(session());
+app.use(session({
+  resave: false,
+  secret: 'Quiz',
+  saveUninitialized: true
+}));
 
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,13 +54,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
-
-
-
-// añadimos ruta acerca de
-app.get('/author', function (req, res) {
-  res.render('author', { errors: [] });
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

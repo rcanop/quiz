@@ -21,6 +21,9 @@
     </form>
     <% } else { %>
     <span class="right"><a href="/login">Conectar</a></span>
+    <% if(session.logado === 2) { %>
+    <span class="right errorMsgs">Sesión caducada</span>
+    <% } %>
     <% } %>
     <h2>Quiz<span>: el juego de las preguntas</span></h2>
   </header>
@@ -33,8 +36,7 @@
       </nav>
       <section class="main menu_der" id="s1">
         <% if (errors.length) { %>
-        <span id="errorMsgs">
-          Corregir Errores:<br />
+        <span class="errorMsgs">
           <% for(var i in errors) { %>
             <span><%= errors[i].message %></span><br />
           <% } %>

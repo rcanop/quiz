@@ -19,16 +19,43 @@ exports.create = function (req, res) {
       res.redirect("/login");
       return;
     }
+    var d = new Date();
+    req.session.user = { id: user.id, username: user.username, hora: d.getTime() / 1000 };
+    req.session.logado = 1
+    if (req.session.redir)
+      res.redirect(req.session.redir.toString()); // volvemos a la página de antes de login.
+    else
+      res.redirect('/');
 
-    req.session.user = { id: user.id, username: user.username };
-    res.redirect(req.session.redir.toString()); // volvemos a la página de antes de login.
   });
 };
 
 // DELETE /logout
 exports.destroy = function (req, res) {
   delete req.session.user;
-  res.redirect(req.session.redir.toString()); // volvemos a la página de antes de login.
+  
+  req.session.logado = 0;
+  if (req.session.redir) {
+    res.redirect(req.session.redir.toString()); // volvemos a la página de antes de login.
+
+  } else {
+    res.redirect('/');
+
+  }
+
+};
+
+exports.destroyAutomatico = function (req, res) {
+  delete req.session.user;
+  req.session.logado = 2;
+  //if (req.session.redir) {
+  //  res.redirect(req.session.redir.toString()); // volvemos a la página de antes de login.
+
+  //} else {
+  //  res.redirect('/');
+
+  //}
+
 };
 
 exports.loginRequired = function (req, res, next) {

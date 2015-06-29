@@ -52,3 +52,8 @@ footer a {
 p {
   padding-bottom:0.5em;
 }
+span.errorMsgs {
+  padding-top:0.5em;
+  font-size:small;
+ 
+}

@@ -1,5 +1,8 @@
 <div class="error">
   <h1><%= message %></h1>
+  <% if( session && session.redir) { %>
+  <h2><a href="<%= session.redir %>">Volver</a></h2>
+  <% } %>
   <h2><%= error.status %></h2>
   <p><%= error.stack %></p>
 </div>

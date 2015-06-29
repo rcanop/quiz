@@ -12,8 +12,8 @@ var fs = require("fs"); // permite leer los ficheros de claves.
 var https = require("https"); // carga https
 
 var options = {
-	key: fs.readFileSync('certs/quiz-2015-key.pem').toString(),
-	cert: fs.readFileSync('certs/quiz-2015-cert.pem').toString()
+    key: fs.readFileSync('certs/quiz-2015-key.pem').toString(),
+    cert: fs.readFileSync('certs/quiz-2015-cert.pem').toString()
 };
 
 /**
@@ -44,7 +44,8 @@ var serverSecure = https.createServer(options, app);
 serverSecure.listen(8443, function() {
   debug("Express server listening on port: " + server.address().port);
 });
-
+serverSecure.on('error', onError);
+serverSecure.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.

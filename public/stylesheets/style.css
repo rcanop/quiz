@@ -120,10 +120,15 @@ div#autor {
   text-align:left;
   
 }
-#errorMsgs {
+.errorMsgs {
   color: #ff6a00;
   font-size:smaller;
   text-align:left;
+}
+span.errorMsgs {
+  padding-top:2em;
+  font-size:small;
+ 
 }
 button {
   border-radius: 5px;

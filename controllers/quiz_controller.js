@@ -20,7 +20,7 @@ exports.load = function (req, res, next, quizId) {
 exports.index = function (req, res, next) {
   var search = null
   , query = {};
-  console.log("--------------" + req.query.search);
+  
   // Obtener los datos de la consulta.  
   if (req.query.search !== undefined) {
     search = req.query.search;
