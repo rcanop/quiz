@@ -42,7 +42,7 @@ Quiz.hasMany(Comment);  // Una pregunta puede tener varios comentarios.
 
 exports.Quiz = Quiz; // exportamos la variable Quiz para poder se usado el modelo
 exports.Comment = Comment;
-
+exports.sql = db;
 
 // Inicialización de la base de datos
 // ----------------------------------

@@ -1,0 +1,25 @@
+﻿<table>
+  <thead>
+    <tr><td></td><td>Total</td></tr>
+  </thead>
+  <tr>
+    <td>Nº preguntas:</td>
+    <td><%= datos.totalQuestions %></td>
+  </tr>
+  <tr>
+    <td>Nº comentarios:</td>
+    <td><%= datos.totalComments %></td>
+  </tr>
+  <tr>
+    <td>Nº medio de comentarios por pregunta:</td>
+    <td><%= datos.averageCommentsQuestions.toFixed(2) %></td>
+  </tr>
+  <tr>
+    <td>Nº preguntas SIN comentarios:</td>
+    <td><%= datos.totalQuestionsWithOutComments %></td>
+  </tr>
+  <tr>
+    <td>Nº preguntas CON comentarios:</td>
+    <td><%= datos.totalQuestionsWithComments %></td>
+  </tr>
+</table>

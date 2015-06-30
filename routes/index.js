@@ -4,6 +4,7 @@ var router = express.Router();
 var quizController    = require('../controllers/quiz_controller.js');
 var commentController = require('../controllers/comment_controller.js');
 var sessionController = require('../controllers/session_controller.js');
+var statisticController = require('../controllers/statistic_controller.js');
 
 
 // Controlar tiempo session.
@@ -48,6 +49,8 @@ router.post('/quizes'                    , sessionController.loginRequired, quiz
 router.get('/quizes/:quizId(\\d+)/edit'  , sessionController.loginRequired, quizController.edit);
 router.put('/quizes/:quizId(\\d+)'       , sessionController.loginRequired, quizController.update);
 router.delete('/quizes/:quizId(\\d+)'    , sessionController.loginRequired, quizController.delete);
+
+router.get('/quizes/statistics'         , statisticController.statistics);
 
 // Autoload comentarios
 router.param('commentId', commentController.load);
