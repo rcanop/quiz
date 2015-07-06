@@ -37,7 +37,12 @@ var Comment = db.import(path.join(__dirname, 'comment'));
 
 // establecer la relación entre Quiz y Comment
 Comment.belongsTo(Quiz); // Un comentario pertenece a una pregunta
-Quiz.hasMany(Comment);  // Una pregunta puede tener varios comentarios.
+Quiz.hasMany(Comment, {
+  'constraints': true,
+  'onUpdate': 'cascade',
+  'onDelete': 'cascade',
+  'hooks': true
+});  // Una pregunta puede tener varios comentarios.
 
 
 exports.Quiz = Quiz; // exportamos la variable Quiz para poder se usado el modelo
