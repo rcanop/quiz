@@ -1,9 +1,9 @@
 ﻿<h2>Añadir comentario</h2>
 <form method="post" action="/quizes/<%= quizid %>/comments">
-  <div class="field">
-    <textarea id="comment" name="comment[comentario]" placeholder="Introduzca su comentario" maxlength="1000"></textarea>
+  <div class="form-group">
+    <textarea class="field form-control" id="comment" name="comment[comentario]" placeholder="Introduzca su comentario" maxlength="1000"></textarea>
   </div>
-  <div class="field">
-    <button type="submit">Enviar</button>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Enviar</button>
   </div>
 </form>

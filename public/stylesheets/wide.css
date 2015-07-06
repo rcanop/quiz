@@ -1,6 +1,6 @@
-body {
+/*body {
   background: #999;
-}
+}*/
 #page-wrap:after {
   content: "Wide Layout";
 }
@@ -11,7 +11,7 @@ div.contenedor {
 div.contenidos {
   display:table-row;
   width:100%;
-  background: #EEE;
+  /*background: #EEE;*/
 }
 .menu_izq {
   width:18%;

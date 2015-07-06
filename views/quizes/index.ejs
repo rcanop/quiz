@@ -1,32 +1,33 @@
 ﻿<div id="quizes">
-  <form action="/quizes" method="get">
-    <p>
-      Buscar:
-      <input type="search" name="search" placeholder="Introduzca búsqueda" />
-      <button type="submit">Seleccionar</button>
-    </p>
+  <form class="form-inline" action="/quizes" method="get">
+    <div class="form-group">
+      <label for="textoBusca">Buscar:</label> 
+      <input type="search" name="search" placeholder="Introduzca búsqueda" id="textoBusca"/>
+      <button class="btn btn-primary" type="submit">Seleccionar</button>
+    </div>
   </form>
-  <table>
+  <div class="container">
     <% var i; for(i=0; i < quizes.length || 0; i++) { %>
-    <tr>
-      <td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+    <div class="row"> 
+      <div class="col-xs-4"><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></div>
       <% if (session.user) { %>
-      <td><button type="button" class="botEdit" onclick="window.open('/quizes/<%=quizes[i].id %>/edit', '_self');">Editar</button></td>
-      <td>
+      <div class="col-xs-2"><button type="button" class="btn btn-warning btn-sm" onclick="window.open('/quizes/<%=quizes[i].id %>/edit', '_self');">Editar</button></div>
+      <div class="col-xs-2">
         <!-- Forma de eliminar un registro -->
-        <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
-          <button type="submit" class="botElim" onclick="return confirm('¿Desea eliminar la pregunta: <%=quizes[i].pregunta %>?');">
+        <form class="form-inline" method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+          <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('¿Desea eliminar la pregunta: <%=quizes[i].pregunta %>?');">
             Eliminar
           </button>
         </form>
-      </td>
+      </div>
+      <div class="col-xs-4"></div>
       <% } %>
-    </tr>
+    </div>
     <% } %>
     <% if (session.user) { %>
-    <tfoot>
-      <tr><td><button type="button" onclick="window.open('/quizes/new', '_self')">Nueva pregunta</button></td></tr>
-    </tfoot>
+    <div class="row">
+      <div class="colx-xs-12"><button class="btn" type="button" onclick="window.open('/quizes/new', '_self')">Nueva pregunta</button></div>
+    </div>
     <% } %>
-  </table>
+  </div>
 </div>

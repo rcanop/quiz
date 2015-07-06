@@ -1,7 +1,7 @@
-﻿<div>
+﻿<div class="container">
   <h3>Edición pregunta</h3>
   <!-- Forma de editar un registro -->
-  <form method="post" action="/quizes/<%= quiz.id %>?_method=put">
+  <form method="post" action="/quizes/<%= quiz.id %>?_method=put" class="form-horizontal">
     <%= include _form.ejs %>
   </form>
 </div>

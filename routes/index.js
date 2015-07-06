@@ -16,7 +16,7 @@ router.use(function (req, res, next) {
     if (req.session.user) {
       n -= req.session.user.hora;
       // Si pasan 2 (120seg) minutos desde la última acción  se libera la sesión.
-      if (n > 120) {
+      if (n > 2*60) {
         sessionController.destroyAutomatico(req, res);
         next(new Error('Ha expirado la sesión.'));
 

@@ -1,74 +1,39 @@
-* {
+/** {
   margin: 0;
   padding: 0;
 }
 
 body {
   font: 16px "Georgia", serif;
+}*/
+
+header {
+  background-color:midnightblue;
+  color:whitesmoke;
+}
+footer {
+  background-color:midnightblue;
+}
+nav {
+  background-color:green;
+  color:white;
+}
+.main {
+  background-color:palegoldenrod;
+  color:black;
 }
 
-
-#page-wrap {
-  padding: 2% auto;
-  background-color: white;
-  display:block;
-
-}
-div.contenedor {
-  margin: 1% auto 1% auto;
-}
-div.contenidos {
-    padding: 1%;
-    color: black;
-
-
-}
-  /*.main {
-    border: 1px solid #999;
-    padding: 1%;
-    margin-bottom: 1%;
-    color: black;
-  }*/
-
-
-section > div {
-  padding: 1%;
-  text-align:left;
+nav a {
+  color: white;
 }
 
-header, nav, section, footer {
-  background: #eee;
-  text-align: center;
-  display:block;
-  
+main a {
+  color:royalblue;
 }
-
-  nav span {
-    padding: 0 10px 0 0;
-  }
-
-  .right {
-    float:right;
-  }
-
-
-a {
-  color: #00B7FF;
+main li {
+  color:black;
 }
-
-.enlacespie {
-  display: block;
-  width: 100%;
-  height: 100%;
-  list-style: none;
-}
-
-.enlacespie > li {
-  display:inline-block;
-  padding-left: 10px;
-}
-
-  .enlacespie > li > a {
+footer a {
     color: #ff6a00;
   }
 
@@ -129,47 +94,4 @@ span.errorMsgs {
   padding-top:2em;
   font-size:small;
  
-}
-button {
-  border-radius: 5px;
-  padding:2px;
-}
-.botEdit, .botElim {
-  border-radius:6px 3px;
-}
-
-.formulario {
-  text-align:left;
-  
-}
-p, h1, h2, h3 {
-  padding: 0.5em 0;
-  
-}
-.right {
-  float:right;
-  padding-right:0.5em;
-
-}
-span.right {
-  padding-top:0.25em;
-}
-header {
-  padding-right: 1%;
-}
-textarea {
-  resize:both;
-  width:100%;
-  min-width:50%;
-  padding-bottom:0.5em;
-}
-input {
-  resize:horizontal;
-  max-width:100%;
-}
-ul.comment {
-  list-style:inside;
-  list-style-type: disc;
-  display:block;
-  width:100%
 }

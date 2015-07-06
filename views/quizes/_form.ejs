@@ -1,29 +1,32 @@
-﻿<table class="formulario">
-  <tr>
-    <td class="label"><label for="tema" class="rem">Tema:</label></td>
-    <td>
-      <select id="tema" name="quiz[tema]">
-        <option value="">Seleccione un tema</option>
-        <option value="ciencia" <%= (quiz.tema === 'ciencia' ? 'selected': ''); %> >Ciencia</option>
-        <option value="humanidades" <%= (quiz.tema === 'humanidades' ? 'selected': ''); %> >Humanidades</option>
-        <option value="tecnologia" <%= (quiz.tema === 'tecnologia' ? 'selected': ''); %> >Tecnología</option>
-        <option value="otro" <%= (quiz.tema === 'otro' ? 'selected': ''); %> >Otro</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td class="label"><label for="preg" class="rem">Pregunta:</label></td>
-    <td><input type="text" id="preg" name="quiz[pregunta]" maxlength="255" placeholder="Introduzca la pregunta" value="<%= quiz.pregunta %>" /></td>
-  </tr>
-  <tr>
-    <td class="label"><label for="resp" class="rem">Respuesta:</label></td>
-    <td><input type="text" id="resp" name="quiz[respuesta]" maxlength="255" placeholder="Introduzca la respuesta" value="<%= quiz.respuesta %>" /></td>
-  </tr>
-  <tr>
-    <td class="label"/>
-    <td>
-      <button type="button" onclick="window.open('/quizes', '_self');">Cancelar</button>
-      <button type="submit">Guardar</button>
-    </td>
-  </tr>
-</table>
+﻿<div class="form-group">
+  <label class="control-label col-xs-12, col-sm-2" for="tema">Tema:</label>
+  <div class="col-xs-12 col-sm-6 col-md-7">
+    <select class="form-control" id="tema" name="quiz[tema]">
+      <option value="">Seleccione un tema</option>
+      <option value="ciencia" <%= (quiz.tema === 'ciencia' ? 'selected': ''); %> >Ciencia</option>
+      <option value="humanidades" <%= (quiz.tema === 'humanidades' ? 'selected': ''); %> >Humanidades</option>
+      <option value="tecnologia" <%= (quiz.tema === 'tecnologia' ? 'selected': ''); %> >Tecnología</option>
+      <option value="otro" <%= (quiz.tema === 'otro' ? 'selected': ''); %> >Otro</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <label for="preg" class="control-label col-xs-12, col-sm-2">Pregunta:</label></td>
+  <div class="col-xs-12 col-sm-6 col-md-7">
+    <input class="form-control" type="text" id="preg" name="quiz[pregunta]" maxlength="255" placeholder="Introduzca la pregunta" value="<%= quiz.pregunta %>" />
+  </div>
+</div>
+<div class="form-group">
+  <label for="resp" class="control-label col-xs-12, col-sm-2">Respuesta:</label>
+  <div class="col-xs-12 col-sm-6 col-md-7">
+    <input class="form-control " type="text" id="resp" name="quiz[respuesta]" maxlength="255" placeholder="Introduzca la respuesta" value="<%= quiz.respuesta %>" />
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-xs-3  col-xs-offset-3 col-sm-2 col-sd-offset-2">
+    <button class="btn" type="button" onclick="window.open('/quizes', '_self');">Cancelar</button>
+  </div>
+    <div class="col-xs-3 col-sm-2 col-sd-offset-4">
+      <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+</div>

@@ -1,14 +1,22 @@
-﻿<h2>Login</h2>
-<form method="post" action="/login">
-  <div class="field">
-    <label for="login">Login:</label><br />
-    <input type="text" id="login" name="login" maxlength="30" size="30" placeholder="usuario" required />
-  </div>
-  <div class="field">
-    <label for="clave">Contraseña:</label><br />
-    <input type="password" id="clave" name="clave" maxlength="32" size="32" placeholder="contraseña " required />
-  </div>
-  <div class="actions">
-    <button type="submit">Entrar</button>
-  </div>
-</form>
+﻿<div class="container">
+  <h2>Login</h2>
+  <form method="post" action="/login" class="form-horizontal">
+    <div class="form-group">
+      <label for="login" class="control-label col-xs-12 col-sm-2 col-md-2">Login:</label>
+      <div class="col-xs-12 col-sm-6 col-md-7">
+        <input type="text" class="form-control" id="login" name="login" maxlength="30" size="30" placeholder="usuario" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="clave" class="control-label col-xs-12 col-sm-2 col-md-2">Contraseña:</label>
+      <div class="col-xs-12 col-sm-6 col-md-7">
+        <input type="password" class="form-control" id="clave" name="clave" maxlength="32" size="32" placeholder="contraseña" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="actions col-xs-12 col-sm-2 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+    </div>
+  </form>
+</div>
