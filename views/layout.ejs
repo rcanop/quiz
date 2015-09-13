@@ -1,61 +1,80 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
-  <title> Preguntas </title>
+  <title>Preguntas</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <!--<link rel="stylesheet" type="text/css"
-    media="only screen and (min-width: 530px) and (min-device-width: 481px)"
-    href="/stylesheets/wide.css" />
-  <link rel="stylesheet" type="text/css"
-    media="only screen and (max-width: 480px)"
-    href="/stylesheets/smartphone.css" />-->
+  <!--<link rel="stylesheet" type="text/css" media="only screen and (min-width: 530px) and (min-device-width: 481px)" href="/stylesheets/wide.css"
+  />
+  <link rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" href="/stylesheets/smartphone.css" />-->
 </head>
 
 <body>
   <header id="h1">
-    <div class="container">
-      <div class="col-xs-5 col-sm-8 col-md-8">
-        <h2>Quiz<span>: el juego de las preguntas</span></h2>
-      </div>
-      <div class="col-xs-2 col-sm-1 col-md-2"></div>
-      <div class="col-xs-5 col-sm-3 col-md-2">
-        <% if (session.user) { %>
-        <form class="form-inline right" method="post" action="/logout?_method=delete">
-          <span class="right"><%= session.user.username %></span>
-          <button class="btn btn-success" type="submit">Desconectar</button>
-        </form>
-        <% } else { %>
-        <span class="right"><a href="/login">Conectar</a></span>
-        <% if(session.logado === 2) { %>
-        <span class="right errorMsgs">Sesión caducada</span>
-        <% } %>
-        <% } %>
-      </div>
-    </div>
-  </header>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-3 col-md-2">
-        <nav class="" id="n1" role="navigation">
-          <ul class="list-unstyled">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/quizes">Preguntas</a></li>
-            <li><a href="/quizes/statistics">Estadísticas</a></li>
-            <li><a href="/author">Acerca de ...</a></li>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#n1">
+            <span class="sr-only">Menú</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Quiz</a>
+        </div>
+        <div class="collapse navbar-collapse" id="n1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="/quizes">Preguntas</a>
+            </li>
+            <li>
+              <a href="/quizes/statistics">Estadísticas</a>
+            </li>
+            <li>
+              <a href="/author">Acerca de ...</a>
+            </li>
           </ul>
-        </nav>
+          <% if (session.user) { %>
+          <form class="navbar-form navbar-right" role="login" method="post" action="/logout?_method=delete">
+            <button class="btn btn-danger" type="submit">Desconectar</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="disabled">
+              <a href="#"><%= session.user.username %></a>
+            </li>
+          </ul>
+          <% } else { %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/login">Conectar</a>
+            </li>
+            <% if(session.logado===2 ) { %>
+            <li class="disabled"><a class="errorMsgs">Sesión caducada</a></li>
+            <% } %>
+          </ul>
+          <% } %>
+        </div>
       </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
       <div class="col-xs-12 col-sm-9 col-md-10">
         <!-- El col-lg tomará el valor 10 -->
         <section class="main" id="s1">
           <% if (errors.length) { %>
           <span class="errorMsgs">
             <% for(var i in errors) { %>
-            <span><%= errors[i].message %></span><br />
+            <span>
+              <%=errors[i].message %>
+            </span>
+            <br />
             <% } %>
           </span>
           <% } %>
@@ -65,20 +84,25 @@
         </section>
       </div>
     </div>
-
   </div>
   <footer class="" id="f1">
     <div class="container">
       <ul class="list-inline right">
-        <li><a href="http://es.wikipedia.org/wiki/Quiz" target="_blank"> ¿Que es un Quiz? </a></li>
-        <li><a href="https://github.com/rcanop/quiz" target="_blank"> Proyecto Git </a></li>
-        <li><a href="http://www.google.es/" target="_blank"> Google </a></li>
+        <li>
+          <a href="http://es.wikipedia.org/wiki/Quiz" target="_blank"> ¿Que es un Quiz? </a>
+        </li>
+        <li>
+          <a href="https://github.com/rcanop/quiz" target="_blank"> Proyecto Git </a>
+        </li>
+        <li>
+          <a href="http://www.google.es/" target="_blank"> Google </a>
+        </li>
       </ul>
     </div>
   </footer>
-
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
 </html>

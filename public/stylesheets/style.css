@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
 }
-
+*/
 body {
-  font: 16px "Georgia", serif;
-}*/
+  padding-top: 80px;
+}
 
 header {
   background-color:midnightblue;
@@ -14,22 +14,22 @@ header {
 footer {
   background-color:midnightblue;
 }
-nav {
+/*nav {
   background-color:green;
   color:white;
-}
+}*/
 .main {
   background-color:palegoldenrod;
   color:black;
 }
 
-nav a {
+/*nav a {
   color: white;
-}
+}*/
 
-main a {
+/*main a {
   color:royalblue;
-}
+}*/
 main li {
   color:black;
 }
